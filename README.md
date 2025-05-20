@@ -1,3 +1,5 @@
+Documentation: https://docs.google.com/document/d/1wBew1SYh66sOljgOMF9zKQ-3aBapTQFkk50Na-8Zquc/edit?usp=sharing
+
 Use Case 1:
 
 Authenticating each resource/API with basic authentication, Username, and Password - Monolith Architecture
