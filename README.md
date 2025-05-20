@@ -1,2 +1,2 @@
 
-![System Design]([https://drive.google.com/file/d/1V7ShmehRjXM0xqmyv-LE_MQea5upkQyI/view?usp=sharing]))
+![Scenario_2](https://drive.google.com/uc?id=1V7ShmehRjXM0qmyv-LEMQea5upKQl)
