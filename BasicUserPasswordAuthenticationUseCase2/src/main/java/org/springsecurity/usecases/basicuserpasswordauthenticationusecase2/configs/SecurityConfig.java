@@ -37,7 +37,8 @@ public class SecurityConfig {
         return http.csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests.requestMatchers("/v1/user/create","/v1/user/signin").permitAll()
-                                .requestMatchers("/v1/user/update").hasRole("ADMIN")//permits the signup api in path /v1/user/create without any authentication
+                                .requestMatchers("/v1/product/update","/v1/product/create","/v1/product/delete/*","/v1/user/get-all","/v1/user/update","/v1/user/{email}").hasRole("ADMIN")//permits the signup api in path /v1/user/create without any authentication
+
                         .anyRequest().authenticated())
 
                 .httpBasic(Customizer.withDefaults())

@@ -9,6 +9,7 @@ import org.springsecurity.usecases.basicuserpasswordauthenticationusecase2.dtos.
 import org.springsecurity.usecases.basicuserpasswordauthenticationusecase2.dtos.UserSignInDto;
 import org.springsecurity.usecases.basicuserpasswordauthenticationusecase2.exceptions.UserDoesNotExistException;
 import org.springsecurity.usecases.basicuserpasswordauthenticationusecase2.models.User;
+import org.springsecurity.usecases.basicuserpasswordauthenticationusecase2.services.IUserService;
 import org.springsecurity.usecases.basicuserpasswordauthenticationusecase2.services.UserService;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @PostMapping("/user/create")
     public UserResponseDto signUp(@RequestBody UserRequestDto userRequestDto)

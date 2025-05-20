@@ -1,7 +1,22 @@
 package org.springsecurity.usecases.basicuserpasswordauthenticationusecase1.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springsecurity.usecases.basicuserpasswordauthenticationusecase1.dtos.ErrorResponse;
+import org.springsecurity.usecases.basicuserpasswordauthenticationusecase1.exceptions.ProductAlreadyExistException;
+import org.springsecurity.usecases.basicuserpasswordauthenticationusecase1.exceptions.ProductDoesNotExistException;
+import org.springsecurity.usecases.basicuserpasswordauthenticationusecase1.exceptions.UserDoesNotExistException;
+
+import java.time.LocalDateTime;
 
 @RestControllerAdvice
 public class RestControllerAdvisor {
+
+    @ExceptionHandler({ProductAlreadyExistException.class, ProductDoesNotExistException.class, UserDoesNotExistException.class})
+    public ResponseEntity<ErrorResponse> handleException(Exception exception) {
+        ErrorResponse errorResponse = new ErrorResponse(LocalDateTime.now(),exception.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
 }
